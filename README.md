@@ -2,7 +2,9 @@
 
 Sitio de una sola página para **Bienes Raíces Asociados**, inmobiliaria de Tuluá (Valle del Cauca) que vende lotes campestres y terrenos de inversión.
 
-Hecho con HTML, CSS y JavaScript sin frameworks ni proceso de build. Se adapta a celular, tablet y computador, e incluye animaciones de aparición que se desactivan si el sistema pide reducir movimiento.
+La página funciona como una vitrina de proyectos activos (al estilo de una tienda en línea): filtros por ubicación y tipo, búsqueda y orden por precio o área. Al tocar un proyecto se abre una ventana flotante con fotos, características, modos de financiación, ubicación y precio. El botón **Agenda tu cita** del encabezado arma el mensaje y lo envía por WhatsApp.
+
+Hecho con HTML, CSS y JavaScript sin frameworks ni proceso de build. Se adapta a celular, tablet y computador, e incluye animaciones que se desactivan si el sistema pide reducir movimiento.
 
 ## Estructura
 
@@ -12,7 +14,8 @@ Hecho con HTML, CSS y JavaScript sin frameworks ni proceso de build. Se adapta a
 ├── css/
 │   └── styles.css        Estilos, animaciones y responsive
 ├── js/
-│   └── main.js           Menú móvil, header, contadores y animaciones al hacer scroll
+│   ├── projects.js       Datos de los proyectos (aquí se agregan o editan)
+│   └── main.js           Vitrina, filtros, ventanas flotantes, agenda y animaciones
 ├── assets/
 │   ├── img/              Fotos de los proyectos e imagen para redes (og-image.jpg)
 │   └── logo/             Logo, favicon e ícono para iPhone
@@ -40,7 +43,8 @@ También se puede arrastrar la carpeta completa a [app.netlify.com/drop](https:/
 
 ## Editar contenido
 
-- **Proyectos:** cada tarjeta es un `<article class="card">` dentro de `#proyectos` en `index.html`.
+- **Proyectos:** se editan en `js/projects.js`. Cada proyecto es un bloque `{ ... }` con precio, área, financiación, fotos, características y ubicación. Para agregar uno, copia un bloque, cambia el `id` y los datos, y pon sus fotos en `assets/img/`. La tarjeta, los filtros y la ventana de detalle se generan solos.
+- **Enlace directo a un proyecto:** `https://tu-sitio.netlify.app/#p-samanes` abre la ficha de ese proyecto.
 - **WhatsApp:** buscar `573106544931` y reemplazar el número.
 - **Colores y tipografías:** variables al inicio de `css/styles.css` (`--navy`, `--sun`, etc.).
 - **Fotos:** reemplazar los archivos de `assets/img/` manteniendo el nombre.
@@ -49,11 +53,10 @@ También se puede arrastrar la carpeta completa a [app.netlify.com/drop](https:/
 
 | Ancho | Diseño |
 | --- | --- |
-| > 1100 px | Escritorio: 3 columnas de proyectos, 4 razones |
-| 961 – 1100 px | Laptop: 2 columnas |
-| ≤ 960 px | Menú hamburguesa |
-| ≤ 860 px | Tablet: secciones a una columna |
-| ≤ 600 px | Celular: tarjetas en una columna, botón flotante de WhatsApp |
+| > 960 px | PC y laptop: filtros en barra lateral, cuadrícula de proyectos, ficha flotante en dos columnas |
+| ≤ 960 px | Tablet: menú hamburguesa, filtros desplegables y chips de ubicación |
+| ≤ 720 px | La ficha y la agenda se abren como hoja inferior que se cierra deslizando hacia abajo |
+| ≤ 600 px | Celular: proyectos en lista (foto a la izquierda) y botón flotante de WhatsApp |
 
 ---
 Contacto del cliente: WhatsApp 310 654 4931 · Instagram [@bienesraicessociedad](https://www.instagram.com/bienesraicessociedad/)
