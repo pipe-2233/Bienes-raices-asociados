@@ -38,6 +38,7 @@
 }
 
 /* ---------- 2. Base ---------- */
+[hidden] { display: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); -webkit-text-size-adjust: 100%; }
 html.modal-open { overflow: hidden; }
@@ -189,8 +190,6 @@ button, input, select { font: inherit; color: inherit; }
 .card__place svg { width: 14px; height: 14px; flex: none; }
 .card__fin { margin-top: auto; padding-top: 8px; font-size: 14px; font-weight: 600; color: var(--ok); }
 
-.empty { background: var(--surface); border-radius: var(--radius); padding: 32px; display: grid; gap: 10px; justify-items: start; box-shadow: var(--shadow-card); }
-.empty p:nth-child(2) { color: var(--muted); }
 .note { margin-top: 20px; font-size: 13px; color: var(--muted); }
 
 /* ---------- 6. Ventanas flotantes ---------- */

@@ -47,6 +47,7 @@ También se puede arrastrar la carpeta completa a [app.netlify.com/drop](https:/
 - **Enlace directo a un proyecto:** `https://tu-sitio.netlify.app/#p-samanes` abre la ficha de ese proyecto.
 - **WhatsApp:** buscar `573106544931` y reemplazar el número.
 - **Colores y tipografías:** variables al inicio de `css/styles.css` (`--navy`, `--sun`, etc.).
+- **Después de editar CSS o JS:** sube el número de versión en `index.html` (`styles.css?v=3` → `?v=4`, igual en los `.js`) para que los celulares no muestren la versión anterior guardada.
 - **Fotos:** reemplazar los archivos de `assets/img/` manteniendo el nombre.
 
 ## Puntos de quiebre

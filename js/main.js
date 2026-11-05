@@ -91,7 +91,6 @@
     listing.classList.remove('is-in');
     listing.innerHTML = list.map(cardHTML).join('');
     $('#count').textContent = list.length + (list.length === 1 ? ' resultado' : ' resultados');
-    $('#empty').hidden = list.length > 0;
     var active = state.zonas.length + state.tipos.length + (state.fin ? 1 : 0) + (state.precio ? 1 : 0) + (state.q ? 1 : 0);
     var badge = $('#filterBadge');
     badge.hidden = !active;
@@ -147,7 +146,6 @@
     render();
   };
   $('#clearFilters').addEventListener('click', clearAll);
-  $('#emptyClear').addEventListener('click', clearAll);
 
   // En celular los filtros arrancan cerrados
   var filtersBox = $('#filtersBox');
